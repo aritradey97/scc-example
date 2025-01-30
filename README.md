@@ -16,28 +16,21 @@ This repository contains examples of using Terraform and Python to manage Cisco 
     cd terraform
     ```
 
-2. Build the Terraform provider:
+2. Build and install the Terraform provider using the Makefile:
 
     ```sh
-    go build -o terraform-provider-cdo
+    make
     ```
 
-3. Move the provider binary to the appropriate directory:
+3. Update the `main.tf` file with your CDO access token, device serial number, access policy UUID, and admin password.
 
-    ```sh
-    mkdir -p ~/.terraform.d/plugins/local/cdo/1.0.0/linux_amd64
-    mv terraform-provider-cdo ~/.terraform.d/plugins/local/cdo/1.0.0/linux_amd64/
-    ```
-
-4. Update the `main.tf` file with your CDO access token, device serial number, access policy UUID, and admin password.
-
-5. Initialize Terraform:
+4. Initialize Terraform:
 
     ```sh
     terraform init
     ```
 
-6. Apply the Terraform configuration:
+5. Apply the Terraform configuration:
 
     ```sh
     terraform apply
